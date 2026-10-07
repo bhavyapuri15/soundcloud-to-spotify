@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "soundcloud-to-spotify"
+version = "0.1.0"
+description = "Add SoundCloud tracks and sets to a Spotify playlist by matching them in Spotify's catalog."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.9"
+authors = [{ name = "Bhavya Puri" }]
+keywords = ["spotify", "soundcloud", "playlist", "music", "cli"]
+dependencies = ["spotipy>=2.24", "yt-dlp"]
+
+[project.optional-dependencies]
+dev = ["pytest", "ruff"]
+
+[project.scripts]
+sc2spotify = "sc2spotify:main"
+
+[project.urls]
+Repository = "https://github.com/bhavyapuri15/soundcloud-to-spotify"
+
+[tool.setuptools]
+py-modules = ["sc2spotify"]
+
+[tool.ruff]
+line-length = 100
